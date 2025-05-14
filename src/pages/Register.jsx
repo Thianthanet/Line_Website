@@ -1,9 +1,11 @@
 import { useState } from "react"
 import axios from "axios"
 import { useAuth } from "../context/AuthContext"
+import { useNavigate } from "react-router-dom"
 
 const Register = () => {
     const { auth } = useAuth()
+    const navigate = useNavigate()
     const [firstname, setFirstname] = useState('')
     const [lastname, setLastname] = useState('')
     const [phone, setPhone] = useState('')
@@ -14,7 +16,7 @@ const Register = () => {
         setIsSubmitting(true)
 
         try {
-            const response = await axios.post('http://localhost:3001/api/register', {
+            const response = await axios.post('https://line-server-sigma.vercel.app/api/register', {
                 userId: auth.userId,
                 token: auth.token,
                 firstname,
@@ -23,6 +25,7 @@ const Register = () => {
                 location
             })
             console.log("Create user successed!", response.data)
+            navigate('/repair')
         } catch (error) {
             console.log(error)
         } finally {

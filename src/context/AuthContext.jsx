@@ -6,7 +6,7 @@ export const AuthProvider = ({ children }) => {
   const [auth, setAuth] = useState(() => {
     // อ่านจาก localStorage ตอนโหลดครั้งแรก
     const storedAuth = localStorage.getItem('auth')
-    return storedAuth ? JSON.parse(storedAuth) : { userId: null, token: null }
+    return storedAuth ? JSON.parse(storedAuth) : { userId: null }
   })
 
   // sync กับ localStorage เมื่อ auth เปลี่ยน
@@ -14,12 +14,12 @@ export const AuthProvider = ({ children }) => {
     localStorage.setItem('auth', JSON.stringify(auth))
   }, [auth])
 
-  const login = ({ userId, token }) => {
-    setAuth({ userId, token })
+  const login = ({ userId }) => {
+    setAuth({ userId })
   }
 
   const logout = () => {
-    setAuth({ userId: null, token: null })
+    setAuth({ userId: null })
     localStorage.removeItem('auth') // ล้างข้อมูลเมื่อ logout
   }
 

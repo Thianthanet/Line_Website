@@ -14,7 +14,7 @@ const Repair = () => {
 
     const handleGetUserId = async () => {
         try {
-            const res = await axios.get('http://localhost:3001/api/getUser/' + auth.userId)
+            const res = await axios.get('http://localhost:5002/api/getUser/' + auth.userId)
             setUserData(res.data.data)
         } catch (error) {
             console.log(error)
@@ -27,7 +27,7 @@ const Repair = () => {
                 <div>
                     {userData && (
                         <div>
-                            <h1>{userData.firstname} {userData.lastname}</h1>
+                            <h1> {userData.firstName} {userData.lastName}</h1>
                             <h1>{userData.phone}</h1>
                             <h1>{userData.location}</h1>
                         </div>
