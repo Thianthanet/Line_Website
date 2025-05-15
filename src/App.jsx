@@ -6,6 +6,7 @@ import UserRepair from "./pages/UserRepair"
 import AdminCreateUser from "./pages/admin/AdminCreateUser"
 import UserTable from "./pages/admin/UserTable"
 import Dashboard from "./pages/admin/Dashboard"
+import Technician from "./pages/technician/Technician"
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
         <Route path="admin" element={ <UserTable /> } />
         <Route path="admin/create-user" element={ <AdminCreateUser /> } />
         <Route path="admin/dashboard" element={ <Dashboard /> } />
+        <Route path="technician" element={ <Technician /> } />
       </Routes>
     </BrowserRouter>
   )

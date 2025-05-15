@@ -16,7 +16,7 @@ const Register = () => {
         setIsSubmitting(true)
 
         try {
-            const response = await axios.post('https://line-server-sigma.vercel.app/api/register', {
+            const response = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/register`, {
                 userId: auth.userId,
                 token: auth.token,
                 firstname,

@@ -12,7 +12,7 @@ const UserTable = () => {
 
     const handleGetUser = async () => {
         try {
-            const res = await axios.get('http://localhost:5002/api/allUsers')
+            const res = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/allUsers`)
             console.log(res.data)
             setUserData(res.data)
         } catch (error) {

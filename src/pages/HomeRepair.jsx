@@ -14,7 +14,7 @@ const Repair = () => {
 
     const handleGetUserId = async () => {
         try {
-            const res = await axios.get('http://localhost:5002/api/getUser/' + auth.userId)
+            const res = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/getUser/` + auth.userId)
             setUserData(res.data.data)
         } catch (error) {
             console.log(error)

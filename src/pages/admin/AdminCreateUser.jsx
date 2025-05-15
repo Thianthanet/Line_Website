@@ -20,7 +20,7 @@ const AdminCreateUser = () => {
   const handleSubmitForm = async (e) => {
     e.preventDefault()
     try {
-      const res = await axios.post('http://localhost:5002/api/create', formData)
+      const res = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/create`, formData)
       alert('สร้างผู้ใช้งานสำเร็จ')
       setFormData({
         firstName: '',
@@ -28,6 +28,7 @@ const AdminCreateUser = () => {
         phone: '',
         location: '',
       })
+      console.log(res)
     } catch (error) {
       console.error('เกิดข้อผิดพลาด:', error)
       alert('เกิดข้อผิดพลาดในการสร้างผู้ใช้')

@@ -20,7 +20,7 @@ const UserRepair = () => {
 
     const handleGetUser = async () => {
         try {
-            const response = await axios.get(`http://localhost:5002/api/getUser/${auth.userId}`);
+            const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/getUser/${auth.userId}`);
             setUserData(response.data);
         } catch (error) {
             console.error("Failed to fetch user data:", error);
@@ -40,7 +40,7 @@ const UserRepair = () => {
         formData.append('location', userData?.data?.location)
 
         try {
-            await axios.post('http://localhost:5002/api/job', formData, {
+            await axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/job`, formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }
