@@ -36,7 +36,7 @@ const Repair = () => {
                         <a href="/user-repair" className="bg-red-500 text-white px-4 py-2 rounded-md text-center hover:bg-red-600">
                             แจ้งซ่อม
                         </a>
-                        <a href="/history-repair" className="bg-blue-500 text-white px-4 py-2 rounded-md text-center hover:bg-blue-600">
+                        <a href="/history" className="bg-blue-500 text-white px-4 py-2 rounded-md text-center hover:bg-blue-600">
                             ประวัติ
                         </a>
                     </div>
