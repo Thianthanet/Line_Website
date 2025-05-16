@@ -35,7 +35,9 @@ function Homepage() {
 
   const handleUserNavigation = async (userId) => {
     try {
-      const res = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/getUser/${userId}`);
+      const res = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/getUser/${userId}`, {
+        withCredentials: true
+      });
       
       const user = res.data;
       console.log('User data:', user);

@@ -10,9 +10,9 @@ export default defineConfig({
     tailwindcss(),
   ],
   
-  // server: {
-  //   allowedHosts: [
-  //     '.ngrok-free.app'  // ใส่ host จาก ngrok ที่ถูกบล็อก
-  //   ]
-  // }
+  server: {
+    allowedHosts: [
+      '.ngrok-free.app'  // ใส่ host จาก ngrok ที่ถูกบล็อก
+    ]
+  }
 })
