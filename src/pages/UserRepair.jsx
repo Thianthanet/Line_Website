@@ -58,19 +58,19 @@ const UserRepair = () => {
     };
 
     return (
-        <div className="min-h-screen bg-gray-100 p-4 flex items-center justify-center">
-            <div className="w-full max-w-md bg-white rounded-2xl shadow-lg p-6">
-                <h2 className="text-2xl font-bold text-center text-green-700 mb-6">📋 แจ้งซ่อม</h2>
-                {error && <p className="text-red-500 text-sm mb-2 text-center">{error}</p>}
+        <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-yellow-50 p-4 flex items-center justify-center">
+            <div className="w-full max-w-md bg-white/60 backdrop-blur-md border border-yellow-200 rounded-3xl shadow-2xl p-6">
+                <h2 className="text-3xl font-extrabold text-center text-yellow-600 mb-6 tracking-wide drop-shadow-sm">🛠️ แจ้งซ่อม</h2>
+                {error && <p className="text-red-500 text-sm mb-3 text-center">{error}</p>}
                 {userData ? (
-                    <form onSubmit={handleSubmit} className="space-y-4">
+                    <form onSubmit={handleSubmit} className="space-y-5">
                         <div>
-                            <label className="block font-medium text-sm mb-1">ประเภทปัญหา</label>
+                            <label className="block text-sm font-semibold text-yellow-800 mb-1">ประเภทปัญหา</label>
                             <select
                                 value={type}
                                 onChange={(e) => setType(e.target.value)}
                                 required
-                                className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+                                className="w-full bg-white border border-yellow-300 rounded-xl px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-yellow-400 shadow-inner"
                             >
                                 <option value="">-- กรุณาเลือกประเภท --</option>
                                 <option value="ไฟฟ้า">ไฟฟ้า</option>
@@ -81,48 +81,47 @@ const UserRepair = () => {
                         </div>
 
                         <div>
-                            <label className="block font-medium text-sm mb-1">รายละเอียด</label>
+                            <label className="block text-sm font-semibold text-yellow-800 mb-1">รายละเอียด</label>
                             <textarea
                                 value={description}
                                 onChange={(e) => setDescription(e.target.value)}
-                                rows="3"
+                                rows="4"
                                 placeholder="กรอกรายละเอียดเพิ่มเติม..."
-                                className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+                                className="w-full bg-white border border-yellow-300 rounded-xl px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-yellow-400 shadow-inner"
                             />
                         </div>
 
                         <div>
-                            <label className="block font-medium text-sm mb-1">แนบรูปภาพที่ 1</label>
+                            <label className="block text-sm font-semibold text-yellow-800 mb-1">แนบรูปภาพที่ 1</label>
                             <input
                                 type="file"
                                 accept="image/*"
                                 onChange={(e) => setImage1(e.target.files[0])}
                                 required
-                                className="w-full border border-gray-300 rounded-lg px-3 py-2"
+                                className="w-full text-sm bg-white border border-yellow-300 rounded-xl px-4 py-2 shadow-sm"
                             />
                         </div>
 
                         <div>
-                            <label className="block font-medium text-sm mb-1">แนบรูปภาพที่ 2</label>
+                            <label className="block text-sm font-semibold text-yellow-800 mb-1">แนบรูปภาพที่ 2</label>
                             <input
                                 type="file"
                                 accept="image/*"
                                 onChange={(e) => setImage2(e.target.files[0])}
                                 required
-                                className="w-full border border-gray-300 rounded-lg px-3 py-2"
+                                className="w-full text-sm bg-white border border-yellow-300 rounded-xl px-4 py-2 shadow-sm"
                             />
                         </div>
 
                         <button
                             type="submit"
-                            className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 rounded-xl transition-all duration-200 active:scale-95 mt-5"
-                            style={{ touchAction: "manipulation", cursor: "pointer" }}
+                            className="w-full bg-gradient-to-r from-yellow-400 to-yellow-500 hover:from-yellow-500 hover:to-yellow-600 text-white font-bold py-3 rounded-2xl shadow-lg transition-transform transform active:scale-95 mt-3"
                         >
-                            ✅ ส่งแจ้งซ่อม
+                            ✨ ส่งแจ้งซ่อม
                         </button>
                     </form>
                 ) : (
-                    <p className="text-center text-gray-500">กำลังโหลดข้อมูลผู้ใช้...</p>
+                    <p className="text-center text-blue-500">กำลังโหลดข้อมูลผู้ใช้...</p>
                 )}
             </div>
         </div>

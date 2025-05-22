@@ -8,6 +8,7 @@ import UserTable from "./pages/admin/UserTable"
 import Dashboard from "./pages/admin/Dashboard"
 import Technician from "./pages/technician/Technician"
 import HistoryUser from "./pages/user/HistoryUser"
+import TechJob from "./pages/technician/TechJob"
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
         <Route path="admin/dashboard" element={ <Dashboard /> } />
         <Route path="technician" element={ <Technician /> } />
         <Route path="history" element={ <HistoryUser /> } />
+        <Route path="tech-job" element={ <TechJob /> } />
       </Routes>
     </BrowserRouter>
   )

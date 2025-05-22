@@ -12,7 +12,7 @@ function Homepage() {
 
   const initializeLiff = async () => {
     try {
-      await liff.init({ liffId: "2007368813-M6JWQelg" });
+      await liff.init({ liffId: `${import.meta.env.VITE_LIFF_ID}` });
       
       if (!liff.isLoggedIn()) {
         return liff.login();
